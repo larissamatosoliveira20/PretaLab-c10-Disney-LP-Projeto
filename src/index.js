@@ -1,4 +1,4 @@
-function pegarPalpiteDigitado() {
+function pegarPalpiteDigitado() { 
   return parseInt(document.getElementById("palpiteDigitado").value);
 }
 
