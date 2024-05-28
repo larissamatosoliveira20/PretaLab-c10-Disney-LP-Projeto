@@ -16,18 +16,19 @@ function atualizarFeedback(msg) {
 }
 
 function pegarPalpitesFalhos() {
-  // to-do
+  return document.getElementById("palpitesFalhos").textContent;
 }
 
 function atualizarPalpitesFalhos(novoValor) {
-  // to-do
+  const campo = document.getElementById("palpitesFalhos");
+  campo.textContent= novoValor;
 }
 
 function pegarPontuacao() {
   return document.getElementById("pontuacao").textContent;
 }
 
-function atualizarPontuacao(novaPontuacao) {
+ function atualizarPontuacao(novaPontuacao) {
   const campo = document.getElementById("pontuacao");
   campo.textContent = `Você tem ${novaPontuacao} pontos`;
-}
+} 
