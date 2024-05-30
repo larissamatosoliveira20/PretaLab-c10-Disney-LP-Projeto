@@ -24,9 +24,9 @@ function jogoDeAdivinhacao() {
         } else {
             alert("Tente um número menor.");
           
-            const novaPontuacao = 100 (tentativas * 0);
+            const novaPontuacao = 100 - (tentativas * 10);
             atualizarPontuacao(novaPontuacao);
-        
+
             const palpitesFalhos = pegarPalpitesFalhos();
             const novosPalpitesFalhos = palpitesFalhos + " " + palpite;
             atualizarPalpitesFalhos(novosPalpitesFalhos);
@@ -35,10 +35,10 @@ function jogoDeAdivinhacao() {
             if (pontuacaoAtual === "Você tem 0 pontos") {
                 alert("Perdeu! Você chegou no limbo, acabou para você!");
                 reiniciarJogo();
+            return;
             }
         }
-        
-        function reiniciarJogo() {
+            function reiniciarJogo() {
             const vaiReiniciar = confirm("Deseja reiniciar o jogo?");
         
             if (vaiReiniciar) {
