@@ -24,7 +24,7 @@ function jogoDeAdivinhacao() {
         } else {
             alert("Tente um número menor.");
           
-            const novaPontuacao = 100 - (tentativas * 10);
+            const novaPontuacao = 100 (tentativas - 10);
             atualizarPontuacao(novaPontuacao);
         
             const palpitesFalhos = pegarPalpitesFalhos();
