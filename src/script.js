@@ -2,8 +2,9 @@ let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 let tentativas = 0;
 let palpitesAnteriores = [];
 
-function pegarPalpiteDigitado() {
-    let palpite = parseInt(prompt("Digite um número entre 1 e 100:"));
+function jogoDeAdivinhacao() {
+ 
+   let palpite = parseInt(prompt("Digite um número entre 1 e 100:"));
     
     if (palpite < 1 || palpite > 100) {
         alert("Por favor, insira um número entre 1 e 100.");
@@ -43,7 +44,7 @@ function pegarPalpiteDigitado() {
             if (vaiReiniciar) {
                 numeroAleatorio = Math.floor(Math.random() * 100) + 1;
                 tentativas = 0;
-                palpitesAnteriores = [];
+                palpite = [];
                 atualizarPalpitesFalhos("");
                 atualizarPontuacao(100);
                 atualizarFeedback("");
