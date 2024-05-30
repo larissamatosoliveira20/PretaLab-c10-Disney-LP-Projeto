@@ -2,7 +2,8 @@ let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 let tentativas = 0;
 let palpitesAnteriores = [];
 let pontuacao = 100;
-function jogoDeAdivinhacao() {
+
+   function jogoDeAdivinhacao() {
 
  
    let palpite = parseInt(prompt("Digite um número entre 1 e 100:"));
