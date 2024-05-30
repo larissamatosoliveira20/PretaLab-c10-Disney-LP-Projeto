@@ -35,7 +35,6 @@ if (!palpiteDigitado) {
         if (vaiReiniciar) {
             numeroAleatorio = Math.floor(Math.random() * 100) + 1;
             tentativas = 0;
-            palpitesAnteriores = [];
             atualizarPalpitesFalhos("");
             atualizarPontuacao(100);
             atualizarFeedback("");
