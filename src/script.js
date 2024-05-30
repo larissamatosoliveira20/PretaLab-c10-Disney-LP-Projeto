@@ -5,8 +5,7 @@ let pontuacao = 100;
 
    function jogoDeAdivinhacao() {
 
- 
-   let palpite = parseInt(prompt("Digite um número entre 1 e 100:"));
+     let palpite = parseInt(prompt("Digite um número entre 1 e 100:"));
     
     if (palpite < 1 || palpite > 100) {
         alert("Por favor, insira um número entre 1 e 100.");
@@ -27,7 +26,7 @@ let pontuacao = 100;
         } else {
             alert("Tente um número menor.");
           
-             let novaPontuacao = pontuacao - 10;
+            const novaPontuacao = pontuacao -= 10;
             pontuacao = novaPontuacao;
 
             const palpitesFalhos = pegarPalpitesFalhos();
@@ -49,8 +48,7 @@ if (vaiReiniciar) {
     numeroAleatorio = Math.floor(Math.random() * 100) + 1;
     tentativas = 0;
     palpitesAnteriores = [];
-    pontuacao = 100; // Reiniciar pontuação
-    atualizarPontuacao(pontuacao);
+    atualizarPontuacao(100);
     atualizarPalpitesFalhos("");
     atualizarFeedback("");
     limparPalpite();
