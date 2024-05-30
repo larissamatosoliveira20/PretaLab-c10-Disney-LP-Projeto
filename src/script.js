@@ -23,7 +23,34 @@ function pegarPalpiteDigitado() {
         } else {
             alert("Tente um número menor.");
           
-    }
-}
- 
+            const novaPontuacao = 100 - (tentativas * 10);
+            atualizarPontuacao(novaPontuacao);
+        
+            const palpitesFalhos = pegarPalpitesFalhos();
+            const novosPalpitesFalhos = palpitesFalhos + " " + palpiteDigitado;
+            atualizarPalpitesFalhos(novosPalpitesFalhos);
+        
+            const pontuacaoAtual = pegarPontuacao();
+            if (pontuacaoAtual === "Você tem 0 pontos") {
+                alert("Perdeu! Você chegou no limbo, acabou para você!");
+                reiniciarJogo();
+            }
+        }
+        
+        function reiniciarJogo() {
+            const vaiReiniciar = confirm("Deseja reiniciar o jogo?");
+        
+            if (vaiReiniciar) {
+                numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+                tentativas = 0;
+                palpitesJaDigitados = [];
+                atualizarPalpitesFalhos("");
+                atualizarPontuacao(100);
+                atualizarFeedback("");
+                limparPalpiteDigitado();
+            }
+
+        }
+
+    } 
 } 
