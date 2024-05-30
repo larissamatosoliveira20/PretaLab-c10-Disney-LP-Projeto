@@ -27,7 +27,7 @@ function pegarPalpiteDigitado() {
             atualizarPontuacao(novaPontuacao);
         
             const palpitesFalhos = pegarPalpitesFalhos();
-            const novosPalpitesFalhos = palpitesFalhos + " " + palpiteDigitado;
+            const novosPalpitesFalhos = palpitesFalhos + " " + palpite;
             atualizarPalpitesFalhos(novosPalpitesFalhos);
         
             const pontuacaoAtual = pegarPontuacao();
@@ -43,11 +43,11 @@ function pegarPalpiteDigitado() {
             if (vaiReiniciar) {
                 numeroAleatorio = Math.floor(Math.random() * 100) + 1;
                 tentativas = 0;
-                palpitesJaDigitados = [];
+                palpitesAnteriores = [];
                 atualizarPalpitesFalhos("");
                 atualizarPontuacao(100);
                 atualizarFeedback("");
-                limparPalpiteDigitado();
+                limparPalpite();
             }
 
         }
