@@ -1,19 +1,24 @@
 let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 let tentativas = 0;
+let palpitesFeitos = [];
 
 function jogoDeAdivinhacao() {
   const palpiteDigitado = pegarPalpiteDigitado();
 
   if (!palpiteDigitado) {
     alert("Digite um número entre 1 e 100!");
-  return;
-  }  
-  if (palpiteDigitado * numeroAleatorio) {
-    tentativas++;
-    atualizarFeedback("Esse número você ja repetiu,Tente outro número")
+    return;
   }
-  
-if (palpiteDigitado === numeroAleatorio) {
+
+  if (palpitesFeitos.includes(palpiteDigitado)) {
+    alert("Número repetido! Tente um número diferente.");
+    marcarNumeroRepetido(palpiteDigitado);
+    return;
+  }
+
+  palpitesFeitos.push(palpiteDigitado);
+
+  if (palpiteDigitado === numeroAleatorio) {
     alert("Parabéns, você acertou o número!");
     reiniciarJogo();
   } else if (palpiteDigitado > numeroAleatorio) {
@@ -23,14 +28,14 @@ if (palpiteDigitado === numeroAleatorio) {
     tentativas++;
     atualizarFeedback("O número é muito baixo. Tente novamente outro número.");
   }
-  
+
   const novaPontuacao = 100 - (tentativas * 10);
   atualizarPontuacao(novaPontuacao);
 
   const palpitesFalhos = pegarPalpitesFalhos();
   const novosPalpitesFalhos = palpitesFalhos + " " + palpiteDigitado;
   atualizarPalpitesFalhos(novosPalpitesFalhos);
-  
+
   const pontuacaoAtual = pegarPontuacao();
   if (pontuacaoAtual === "Você tem 0 pontos") {
     alert("Perdeu! Você chegou no limbo, acabou para você!");
@@ -44,9 +49,10 @@ function reiniciarJogo() {
   if (vaiReiniciar) {
     numeroAleatorio = Math.floor(Math.random() * 100) + 1;
     tentativas = 0;
+    palpitesFeitos = [];
     atualizarPalpitesFalhos("");
     atualizarPontuacao(100);
     atualizarFeedback("");
     limparPalpiteDigitado();
   }
-} 
+}
