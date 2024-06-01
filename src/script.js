@@ -8,14 +8,12 @@ function jogoDeAdivinhacao() {
   if (!palpiteDigitado) {
     alert("Digite um número entre 1 e 100!");
     return;
-  }
-
+  } else if (palpiteDigitado <= 0 || palpiteDigitado > 100) {
   if (palpitesFeitos.includes(palpiteDigitado)) {
     alert("Número repetido! Tente um número diferente.");
     marcarNumeroRepetido(palpiteDigitado);
     return;
   }
-
   palpitesFeitos.push(palpiteDigitado);
 
   if (palpiteDigitado === numeroAleatorio) {
@@ -56,3 +54,4 @@ function reiniciarJogo() {
     limparPalpiteDigitado();
   }
 }
+} 
